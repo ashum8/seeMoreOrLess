@@ -66,6 +66,22 @@ class CommonFormUtils: NSObject {
         return view
     }
     
+        func setupCustomPhoneView(dataObj: FIModelClasses.DynamicVerificationTypeVOList, tag: Int, delegate:CustomTFViewDelegate? = nil) -> UIView {
+        
+        let view = CustomPhoneNumberView()
+        view.accessibilityIdentifier = dataObj.fieldId
+        view.setProperties(tag: tag, delegate: self)
+        return view
+    }
+    
+    func setupCustomMobileView(dataObj: FIModelClasses.DynamicVerificationTypeVOList, tag: Int, delegate:CustomTFViewDelegate? = nil) -> UIView {
+           
+           let view = CustomMobileNumberView()
+           view.accessibilityIdentifier = dataObj.fieldId
+           view.setProperties(tag: tag, delegate: self)
+           return view
+       }
+    
     
     func setupCustomviews(dataObj: FIModelClasses.DynamicVerificationTypeVOList, tag: Int)-> UIView {
         
